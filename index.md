@@ -45,7 +45,7 @@ div{
 <!-- slide -->
 <div id=2>今天是不是<br>也是努力奋斗的一天呢？</div>
 
-:struggle:
+
 
 
 <script>
