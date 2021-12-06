@@ -215,15 +215,54 @@ div{
     color:pink; 
     text-shadow: 0px 0px 70px;
 }
+
+}
 </style></div>
     <div class="reveal">
       <div class="slides">
-        <section lineno="38" class="slide " data-line="38" data-h="0" data-v="0">
+        <section lineno="40" class="slide " data-line="40" data-h="0" data-v="0">
 <div id="1"></div>
 <p>&#x1F604;</p>
-</section><section lineno="44" class="slide " data-line="44" data-h="1" data-v="0">
+</section><section lineno="46" class="slide " data-line="46" data-h="1" data-v="0">
 <div id="2">&#x4ECA;&#x5929;&#x662F;&#x4E0D;&#x662F;<br>&#x4E5F;&#x662F;&#x52AA;&#x529B;&#x594B;&#x6597;&#x7684;&#x4E00;&#x5929;&#x5462;&#xFF1F;</div>
-<p>:struggle:</p>
+</section><section lineno="49" class="slide " data-line="49" data-h="2" data-v="0">
+<div id="3">&#x8FD8;&#x8BB0;&#x5F97;&#x662F;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x5F00;&#x59CB;<br>&#x4F60;&#x4E5F;&#x8FC7;&#x4E0A;&#x4E86;&#x201C;&#x8003;&#x7814;&#x72D7;&#x201D;&#x7684;&#x751F;&#x6D3B;&#x5417;&#xFF1F;<br>&#x4E00;&#x65E5;&#x590D;&#x4E00;&#x65E5;&#x7684;&#x62FC;&#x640F;</div>
+<div>&#x81EA;&#x4E60;&#x5BA4;&#x3001;&#x56FE;&#x4E66;&#x9986;&#x65E9;&#x5DF2;&#x6210;&#x4E3A;&#x4F60;&#x719F;&#x6089;&#x7684;&#x201C;&#x72D7;&#x7A9D;&#x201D;<br>&#x4E00;&#x5750;&#x5C31;&#x662F;&#x4E00;&#x5929;<br>&#x53EA;&#x6709;&#x4F60;&#x80FD;&#x591F;&#x8010;&#x4F4F;&#x8FD9;&#x6837;&#x7684;&#x5BC2;&#x5BDE;</div>
+</section><section lineno="54" class="slide " data-line="54" data-h="3" data-v="0">
+<div id="4">&#x8FD8;&#x8BB0;&#x5F97;&#x90A3;&#x5929;&#xFF0C;&#x662F;
+<form name="date">
+    <input type="text" name="year" id="year" style="width:100px;font-size:20px">&#x5E74;
+    <input type="text" name="month" id="month" style="width:70px;font-size:20px">&#x6708;
+    <input type="text" name="day" id="day" style="width:70px;font-size:20px">&#x65E5;
+</form><br>
+<button onclick="dateCommit()" style="font-size:20px">&#x786E;&#x5B9A;</button>
+</div>
+<br>
+<div id="5" style="display:none">&#x8BB0;&#x5F97;&#x90A3;&#x4E00;&#x5929;<br><br>&#x4F60;&#x4E0B;&#x5B9A;&#x51B3;&#x5FC3;<br><br>&#x51B3;&#x610F;&#x8981;&#x8003;&#x7814;</div>
+</section><section lineno="67" class="slide " data-line="67" data-h="4" data-v="0">
+<div>&#x8F6C;&#x773C;&#x95F4;&#xFF0C;&#x5DF2;&#x7ECF;&#x8FC7;&#x53BB;&#x4E86;<br>
+<span id="6"></span><span id="7"></span><span id="8"></span>
+</div>
+</section><section lineno="72" class="slide " data-line="72" data-h="5" data-v="0">
+<div>
+&#x5728;&#x8FD9;<span id="9"></span> &#x5929;&#x91CC;<br>
+&#x4F60;&#x4E00;&#x76F4;&#x52AA;&#x529B;&#x62FC;&#x640F;<br>
+</div>
+</section><section lineno="79" class="slide " data-line="79" data-h="6" data-v="0">
+<div>&#x65F6;&#x95F4;&#x8FC7;&#x5F97;&#x771F;&#x662F;&#x5FEB;&#x5440; <br>
+<p>&#x1F550;</p>
+<p><span>&#x8FD8;&#x6709;</span><span id="10"></span> &#x5929;&#x5C31;&#x8981;&#x8003;&#x8BD5;&#x5566;</p>
+</div>
+</section><section lineno="87" class="slide " data-line="87" data-h="7" data-v="0">
+<div>&#x5728;&#x5269;&#x4E0B;&#x7684;&#x65F6;&#x95F4;&#x91CC;
+<br>
+&#x5E0C;&#x671B;&#x4F60;&#x80FD;&#x591F;&#x6C89;&#x4F4F;&#x6C14;&#x7EE7;&#x7EED;&#x524D;&#x884C;
+<br>
+&#x7A33;&#x4F4F;&#x5FC3;&#x6001;&#xFF0C;&#x4F60;&#x4E00;&#x5B9A;&#x4F1A;&#x4E0A;&#x5CB8;&#xFF01;
+<br>
+&#x4F60;&#x4E00;&#x5B9A;&#x80FD;&#x6210;&#x529F;&#xFF01;
+</div>
+<p>&#x2600;&#xFE0F;</p>
 <script>
     var d = new Date();
     var e = document.getElementById("1");
@@ -235,6 +274,62 @@ div{
     str += "好 呀";
 
     e.innerHTML = str;
+    e = document.getElementById("10");
+    var examDate = new Date(2021, 11, 25);
+    e.innerHTML = examDate.getDate() - d.getDate();
+</script>
+<script>
+    function dateCommit()
+    {
+        var year = date.year.value;
+        var month = date.month.value - 1;
+        var day = date.day.value;
+        if (day == "")
+            day = 1;
+        if (year >= 20 && year <= 21)
+            year += 2000;
+
+        var e = document.getElementById("5");
+		e.style.display='block';
+        e = document.getElementById("4");
+		e.style.display='none';
+
+        var d = new Date();
+        var thatDay = new Date(year, month, day);
+        console.log(thatDay);
+        console.log(d);
+        var days = parseInt((d - thatDay) / 1000 / 60 / 60 / 24);
+
+
+        e = document.getElementById("6");
+        if (parseInt(days / 365) > 0)
+            e.innerHTML = parseInt(days / 365) + '年';
+
+        e = document.getElementById("7");
+        var ddd;
+        if (month < d.getMonth())
+            ddd = d.getMonth() - month;
+        else
+            ddd = d.getMonth() + 12 - month;
+
+        if (day > d.getDate())
+            ddd = ddd - 1;
+
+        if (ddd % 12 > 0)
+            e.innerHTML = ddd % 12 + '个月';
+
+        e = document.getElementById("8");
+        if (d.getDate() > day)
+            e.innerHTML = d.getDate() - day + '天';
+        if (d.getDate() < day)
+            e.innerHTML = d.getDate() + 30 - day + '天';
+
+        
+        e = document.getElementById("9");
+        e.innerHTML = parseInt(days);
+
+    }
+
 </script>
 </section>
       </div>
